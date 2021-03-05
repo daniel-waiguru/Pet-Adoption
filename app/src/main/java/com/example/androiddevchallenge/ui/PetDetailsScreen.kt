@@ -58,10 +58,6 @@ fun PetDetailsScreen(navController: NavController, petId: Int) {
                 )
                 Spacer(modifier = Modifier.size(16.dp))
                 Row {
-                    var color = Color.White
-                    fun likePet() {
-                        color = Color.Red
-                    }
                     Icon(
                         imageVector = Icons.Rounded.Favorite,
                         contentDescription = "Like Button",
@@ -70,10 +66,10 @@ fun PetDetailsScreen(navController: NavController, petId: Int) {
                             .height(34.dp)
                             .clickable(
                                 onClick = {
-                                    likePet()
+                                    // TODO do something
                                 }
                             ),
-                        tint = color
+                        tint = Color.Gray
                     )
                     Spacer(modifier = Modifier.size(16.dp))
                     Button(
@@ -112,14 +108,8 @@ fun PetDetailsScreen(navController: NavController, petId: Int) {
             .width(24.dp)
             .height(24.dp)
             .clickable {
-                   navController.navigate("pets")
+                navController.navigate("pets")
             },
         tint = MaterialTheme.colors.onSurface
     )
-
-}
-@Composable
-fun SnackBar(
-    text: @Composable ()-> Unit,
-) {
 }
