@@ -7,5 +7,6 @@ data class PetModel(
     val breed: String,
     val weight: Double,
     val age: Int,
-    val imageRes: Int
+    val imageRes: Int,
+    val location: String
 )

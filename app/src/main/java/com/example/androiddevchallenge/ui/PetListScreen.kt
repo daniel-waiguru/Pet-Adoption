@@ -11,15 +11,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.model.PetModel
-import com.example.androiddevchallenge.repository.MainRepository
+import com.example.androiddevchallenge.repository.DataStore
 import com.example.androiddevchallenge.ui.components.DisplayPets
 
 @Composable
 fun PetListScreen(onPetItemClicked:(PetModel) ->Unit) {
     Column {
         HeaderText()
-        Log.d("Pets", MainRepository.allPets.toString())
-        DisplayPets(MainRepository.allPets) {
+        Log.d("Pets", DataStore.allPets.toString())
+        DisplayPets(DataStore.allPets) {
             onPetItemClicked(it)
         }
     }

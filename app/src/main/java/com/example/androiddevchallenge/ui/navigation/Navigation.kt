@@ -25,7 +25,7 @@ fun Navigation() {
         ) {
             val petId = it.arguments?.getInt("petId")
             petId?.let { id ->
-                PetDetailsScreen(id)
+                PetDetailsScreen(navController, id)
             }
         }
     }
