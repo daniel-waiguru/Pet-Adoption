@@ -15,21 +15,19 @@
  */
 package com.example.androiddevchallenge.ui.components
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.GridCells
+import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.androiddevchallenge.model.PetModel
 
+@ExperimentalFoundationApi
 @Composable
 fun DisplayPets(pets: List<PetModel>, onPetClicked: (PetModel) -> Unit) {
-    LazyColumn(
-        modifier = Modifier.fillMaxWidth(),
-        contentPadding = PaddingValues(16.dp, 16.dp, 16.dp)
-    ) {
+    LazyVerticalGrid(GridCells.Adaptive(150.dp), contentPadding = PaddingValues(8.dp)) {
         items(pets) { pet ->
             PetCardItem(petModel = pet) { onPetClicked(it) }
         }
