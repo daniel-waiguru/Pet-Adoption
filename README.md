@@ -17,7 +17,7 @@ a detailed information about a particular Pet of interest.
 This is my first encounter with jetpack compose and my aim was to learn new cool stiff about this
 technology in building beautiful and declarative UI.
 Few features i interacted with are;
--* Top AppBar
+- Top AppBar
 -* Working with lists - i first tried column but later switched to Grid lists for learning purposes
    evn though it is still experimental
 -* Working with Navigation and passing data using NavBuilder
