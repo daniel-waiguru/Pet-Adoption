@@ -10,20 +10,20 @@ import com.example.androiddevchallenge.ui.PetListScreen
 @Composable
 fun Navigation() {
     val navController = rememberNavController()
-    NavHost(navController, startDestination = "pets") {
+    NavHost(navController = navController, startDestination = "pets") {
         composable("pets") {
             PetListScreen { pet ->
                 initPetDetailsScreen(navController, pet.id)
             }
         }
         composable(
-            "pet_details",
+            "petDetail/{petId}",
             arguments = listOf(
-                navArgument("pet_id") {
+                navArgument("petId") {
                     type = NavType.IntType
                 })
         ) {
-            val petId = it.arguments?.getInt("pet_id")
+            val petId = it.arguments?.getInt("petId")
             petId?.let { id ->
                 PetDetailsScreen(id)
             }
@@ -31,6 +31,5 @@ fun Navigation() {
     }
 }
 fun initPetDetailsScreen(navController: NavController, petId: Int) {
-    navController.currentBackStackEntry?.arguments?.putInt("pet_id", petId)
-    navController.navigate("pet_details")
+    navController.navigate("petDetail/$petId")
 }

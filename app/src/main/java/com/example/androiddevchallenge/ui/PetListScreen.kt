@@ -1,7 +1,8 @@
 package com.example.androiddevchallenge.ui
 
+import android.util.Log
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -17,6 +18,7 @@ import com.example.androiddevchallenge.ui.components.DisplayPets
 fun PetListScreen(onPetItemClicked:(PetModel) ->Unit) {
     Column {
         HeaderText()
+        Log.d("Pets", MainRepository.allPets.toString())
         DisplayPets(MainRepository.allPets) {
             onPetItemClicked(it)
         }
@@ -27,10 +29,10 @@ fun PetListScreen(onPetItemClicked:(PetModel) ->Unit) {
 fun HeaderText() {
     Text(
         text = "Adopt A Pet",
-        style = MaterialTheme.typography.h2,
+        style = MaterialTheme.typography.h4,
         modifier = Modifier
             .padding(8.dp)
-            .fillMaxSize(),
+            .fillMaxWidth(),
         textAlign = TextAlign.Center
     )
 }
