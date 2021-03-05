@@ -1,9 +1,31 @@
+/*
+ * Copyright 2021 The Android Open Source Project
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.example.androiddevchallenge.ui
-
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.Button
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
@@ -24,7 +46,6 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.navigate
 import com.example.androiddevchallenge.repository.DataStore
 
-
 @Composable
 fun PetDetailsScreen(navController: NavController, petId: Int) {
     val pet = DataStore.getPetById(petId)
@@ -35,13 +56,15 @@ fun PetDetailsScreen(navController: NavController, petId: Int) {
     """.trimIndent()
     Box {
         Column {
-            Image(painter = painterResource(pet.imageRes),
+            Image(
+                painter = painterResource(pet.imageRes),
                 contentDescription = "Pet image",
                 contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxWidth()
             )
             Column(modifier = Modifier.padding(16.dp)) {
-                Text(text = pet.name,
+                Text(
+                    text = pet.name,
                     style = MaterialTheme.typography.h2,
                 )
                 Row {
@@ -76,17 +99,16 @@ fun PetDetailsScreen(navController: NavController, petId: Int) {
                         modifier = Modifier
                             .shadow(shape = MaterialTheme.shapes.large, elevation = 2.dp)
                             .height(45.dp)
-                            .fillMaxWidth()
-                        ,
+                            .fillMaxWidth(),
                         onClick = {
                             // TODO do something
-                        }) {
+                        }
+                    ) {
                         Text(
                             text = "Adopt Me"
                         )
                     }
                 }
-
             }
         }
     }
@@ -96,8 +118,7 @@ fun PetDetailsScreen(navController: NavController, petId: Int) {
         modifier = Modifier
             .padding(8.dp)
             .width(32.dp)
-            .height(32.dp)
-            ,
+            .height(32.dp),
         tint = MaterialTheme.colors.surface
     )
     Icon(
