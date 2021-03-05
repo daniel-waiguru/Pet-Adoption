@@ -2,16 +2,27 @@
 
 <!--- Replace <OWNER> with your Github Username and <REPOSITORY> with the name of your repository. -->
 <!--- You can find both of these in the url bar when you open your repository in github. -->
-![Workflow result](https://github.com/<OWNER>/<REPOSITORY>/workflows/Check/badge.svg)
+![Workflow result](https://github.com/DanielWaiguru91/Pet-Adoption/workflows/Check/badge.svg)
 
 
 ## :scroll: Description
 <!--- Describe your app in one or two sentences -->
+Pet Adoption is simple basic jetpack compose app that displays a list of Pets for adoption and also
+a detailed information about a particular Pet of interest.
 
 
 ## :bulb: Motivation and Context
 <!--- Optionally point readers to interesting parts of your submission. -->
 <!--- What are you especially proud of? -->
+This is my first encounter with jetpack compose and my aim was to learn new cool stiff about this
+technology in building beautiful and declarative UI.
+Few features i interacted with are;
+-* Top AppBar
+-* Working with lists - i first tried column but later switched to Grid lists for learning purposes
+   evn though it is still experimental
+-* Working with Navigation and passing data using NavBuilder
+-* View elements positioning in layouts
+-* Working with images and different styles that can be applied
 
 
 ## :camera_flash: Screenshots
