@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             MyTheme {
-                initApp()
+                InitApp()
             }
         }
     }
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
 
 // Start building your app here!
 @Composable
-fun initApp() {
+fun InitApp() {
     Surface(color = MaterialTheme.colors.background) {
         Navigation()
     }
@@ -48,7 +48,7 @@ fun initApp() {
 @Composable
 fun LightPreview() {
     MyTheme {
-        initApp()
+        InitApp()
     }
 }
 
@@ -56,6 +56,6 @@ fun LightPreview() {
 @Composable
 fun DarkPreview() {
     MyTheme(darkTheme = true) {
-        initApp()
+        InitApp()
     }
 }

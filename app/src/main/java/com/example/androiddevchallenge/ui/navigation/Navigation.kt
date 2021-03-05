@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import androidx.navigation.NavType
 import androidx.navigation.compose.*
+import com.example.androiddevchallenge.ui.PetDetailsScreen
 import com.example.androiddevchallenge.ui.PetListScreen
 
 @Composable
@@ -23,8 +24,8 @@ fun Navigation() {
                 })
         ) {
             val petId = it.arguments?.getInt("pet_id")
-            petId?.let {
-                initPetDetailsScreen(navController, it)
+            petId?.let { id ->
+                PetDetailsScreen(id)
             }
         }
     }
