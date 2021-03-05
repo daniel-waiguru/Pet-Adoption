@@ -15,6 +15,7 @@
  */
 package com.example.androiddevchallenge.ui.navigation
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import androidx.navigation.NavType
@@ -26,6 +27,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.androiddevchallenge.ui.PetDetailsScreen
 import com.example.androiddevchallenge.ui.PetListScreen
 
+@ExperimentalFoundationApi
 @Composable
 fun Navigation() {
     val navController = rememberNavController()
